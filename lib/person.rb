@@ -11,20 +11,11 @@ class Person
     @hygiene = hygiene
   end
 
-  def update_happiness=(update)
-    if update <= 10
-      self.happiness = update
-    end
-  end
-
-  # def hygiene=(update_hygiene)
-  #
-  # end
-  def clean?(hygiene)
+  def clean?
     self.hygiene > 7
   end
 
-  def happy?(happiness)
+  def happy?
     self.happiness > 7
   end
 
@@ -40,7 +31,18 @@ class Person
 
   def work_out
     self.hygiene -= 3
+    self.happiness += 2
     return "♪ another one bites the dust ♫"
+  end
+
+  def call_friend(friend)
+    self.happiness += 3
+    friend.happiness += 3
+    return "Hi Felix! It's Penelope. How are you?"
+  end
+
+  def start_conversation(friend, topic)
+    
   end
 
 end
