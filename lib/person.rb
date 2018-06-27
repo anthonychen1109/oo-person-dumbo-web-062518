@@ -11,6 +11,28 @@ class Person
     @hygiene = hygiene
   end
 
+  def happiness=(update)
+    @happiness = update
+    if @happiness > 10
+      @happiness = 10
+    elsif @happiness < 0
+      @happiness = 0
+    else
+      @happiness = update
+    end
+  end
+
+  def hygiene=(update)
+    @hygiene = update
+    if @hygiene > 10
+      @hygiene = 10
+    elsif @hygiene < 0
+      @hygiene = 0
+    else
+      @hygiene = update
+    end
+  end
+
   def clean?
     self.hygiene > 7
   end
@@ -42,7 +64,7 @@ class Person
   end
 
   def start_conversation(friend, topic)
-    
+
   end
 
 end
